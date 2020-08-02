@@ -1,0 +1,30 @@
+//header('Content-Type: application/json; charset=UTF-8'); //設定資料類型為 json，編碼 utf-8
+fwrite($myfile,"OK1");
+if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
+    @$idx = $_POST["idx"]; 
+    @$name = $_POST["name"]; 
+    @$age = $_POST["age"];
+    if ($idx != null && $name != null && $age != null) { //如果 nickname 和 gender 都有填寫
+        //回傳 nickname 和 gender json 資料
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        $sql = "UPDATE `animals` SET `name`='na2a2a' WHERE `id` = 1";
+        if ($conn->query($sql) === TRUE) {
+            echo json_encode(array(
+                'name' => $name,
+                'age' => $age
+            )
+          } else {
+            echo json_encode(array(
+                'errorMsg' => 'Falied！'
+            ));
+          }
+
+
+} else {
+    //回傳 errorMsg json 資料
+    echo json_encode(array(
+        'errorMsg' => '請求無效，只允許 POST 方式訪問！'
+    ));
+}
+fclose($myfile);

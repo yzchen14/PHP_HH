@@ -1,0 +1,53 @@
+h1 {
+    color: navy;
+    margin-left: 24px;
+  }
+
+p {
+    font-size: 24px;
+  }
+
+p.thick {
+font-weight: bold;
+}
+
+body {text-align:center;}
+
+.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+  }
+#customers {
+font-size: 48px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+}
+#customers th {
+    text-align: left;
+    background-color: #b15a27;
+  }
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+
+    font-size: 48px;
+    text-align: right;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 0px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+  
+  input[type=text]:focus {
+    border: 3px solid #555;
+  }
