@@ -22,15 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
     $result = mysqli_query($conn, $sql);
     //$field = mysql_num_fields($result);
     
-    $csv_export.= 'dummy,';
+    //$csv_export.= 'dummy,';
     while($row = mysqli_fetch_array($result))
     {
         array_push($field_name, $row['Field']);
         $csv_export.= $row['Field'].',';
        // echo $row['Field'];
     }
-    
-
+    $csv_export.= '
+    ';
  //   $field = mysql_num_fields($query);
 /*
     for($i = 0; $i < $field; $i++) {
@@ -53,9 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
         //$field = mysql_num_fields($result);
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            $csv_export.= 'dummy,';
             foreach($field_name as $name){
-                $csv_export.= '"'.$row[$name].'",';
+                $csv_export.= $row[$name].',';
             }
             $csv_export.= '
             ';	
@@ -65,14 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
     }
 
     $aResult['rsl'] =$csv_export;
-    
 
-    
-
-
-    header("Content-type: text/x-csv");
-    header("Content-Disposition: attachment; filename=".$csv_filename."");
-    //echo($csv_export);
 
 
     echo json_encode($aResult);

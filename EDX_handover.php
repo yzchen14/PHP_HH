@@ -114,8 +114,27 @@ function query_table(last=0){
     );
 
 }
-/*
+
+function exportToCSV( _csvString ) {
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "dataTable.csv";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null) {
+        var code = encodeURIComponent( _csvString );
+        if ( navigator.appVersion.indexOf("Win")==-1 ) {
+            downloadLink.href = "data:application/csv;charset=utf-8," + code;
+        } else {
+            downloadLink.href = "data:application/csv;charset=utf-8,%EF%BB%BF" + code;
+        }
+    }
+
+    downloadLink.click();
+}
+
+
 function export_table(){
+
+    
     $.ajax({
         type: "POST",
         dataType: 'json',
@@ -126,12 +145,15 @@ function export_table(){
         },
         success: function(obj, textstatus) {
             console.log(obj.rsl);
+            exportToCSV(obj.rsl);
+           
+
         }
     }
     ); 
  
 }
-*/
+
 // refresh input table
 function refresh(){
     $.ajax({
