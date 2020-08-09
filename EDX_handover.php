@@ -80,7 +80,7 @@
 <script type="text/javascript">
 var ID_list = [];
 
-// set today to end date
+// set today to end date for the edx table
 document.getElementById('end_date').valueAsDate = new Date();
 
 function query_table(last=0){
@@ -114,7 +114,7 @@ function query_table(last=0){
     );
 
 }
-
+/*
 function export_table(){
     $.ajax({
         type: "POST",
@@ -131,7 +131,7 @@ function export_table(){
     ); 
  
 }
-
+*/
 // refresh input table
 function refresh(){
     $.ajax({
