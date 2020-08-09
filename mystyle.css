@@ -18,24 +18,6 @@ body {text-align:center;}
     font-weight: bold;
 
   }
-#customers {
-font-size: 48px;
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-border-collapse: collapse;
-}
-#customers th {
-    text-align: left;
-    background-color: #b15a27;
-  }
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers td, #customers th {
-    border: 1px solid #ddd;
-
-    font-size: 48px;
-    text-align: right;
-}
 
 input[type=text] {
     width: 50%;
@@ -51,3 +33,16 @@ input[type=text] {
   input[type=text]:focus {
     border: 3px solid #555;
   }
+
+  .button {
+    background-color: #21af26;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  

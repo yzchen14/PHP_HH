@@ -31,7 +31,7 @@
 
     $servername = "localhost";
     $username = "yzchen14";
-    $password = "ntutalons829";
+    $password = "tsmcdefect";
     $dbname = "mytest";
 
 
@@ -91,7 +91,7 @@
 
 <script type="text/javascript">
 
-function MyFunction(img){
+function modal_Image(img){
 var modal = document.getElementById("myModal");
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 //var img = document.getElementById("myImg");
